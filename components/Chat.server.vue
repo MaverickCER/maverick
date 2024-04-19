@@ -1,6 +1,6 @@
 <template>
-<a :href="`${$t(`tContactSectionHref3`)}`" target="_blank" rel="noopener" class="chat-button">
-  <div class="chat-button-label">
+<section class="chat-section">
+  <div class="chat-section-label">
     <p class="chat-skills">{{ $t(`tChatButtonSkills`) }}</p>
     <p class="chat-projects">{{ $t(`tChatButtonProjects`) }}</p>
     <p class="chat-about">{{ $t(`tChatButtonAbout`) }}</p>
@@ -18,20 +18,20 @@
     <p class="chat-project14">{{ $t(`tChatButtonProject14`) }}</p>
     <p class="chat-project15">{{ $t(`tChatButtonProject15`) }}</p>
   </div>
-  <div class="chat-button-icon">
+  <div class="chat-section-icon">
     <span></span>
     <span></span>
     <span></span>
   </div>
-</a>
+</section>
 </template>
 
 <style>
-.chat-button {
+.chat-section {
   pointer-events: all;
   position: fixed;
   bottom: 20px;
-  right: 20px;
+  right: 24px;
   border: none;
   z-index: 114;
   cursor: default;
@@ -41,13 +41,13 @@
   text-decoration: none;
 }
 
-.chat-button-icon {
+.chat-section-icon {
   border-radius: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
+  width: 60px;
+  height: 60px;
   position: absolute;
   top: 0;
   right: 0;
@@ -63,14 +63,14 @@
   opacity: .8;
 }
 
-.chat-button-icon span {
+.chat-section-icon span {
   width: 5px;
   height: 5px;
   background-color: #f3f3f3;
   border-radius: 100%;
 }
 
-.chat-button-label {
+.chat-section-label {
   display: flex;
   width: fit-content;
   position: absolute;
@@ -79,25 +79,25 @@
   transition: all .5s linear;
   overflow: hidden;
   z-index: -1;
-  border-radius: 20px;
+  border-radius: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: #444444cc;
   position: relative;
   min-width: 0px;
-  min-height: 40px;
-  padding: 0 20px;
-  cursor: pointer;
+  min-height: 60px;
+  padding: 0 30px;
+  cursor: default;
 }
 
-.chat-button-label p:empty {
+.chat-section-label p:empty {
   padding: 0;
   transition: all .5s linear;
   margin-right: 0px;
 }
 
-.chat-button-label p {
+.chat-section-label p {
   max-width: 0px;
   color: #f3f3f3;
   display: flex;
@@ -114,29 +114,29 @@
   white-space: nowrap;
 }
 
-.intro .chat-button-label {
+.intro .chat-section-label {
   max-width: 0;
   cursor: default;
   overflow: hidden;
   transition: all .5s linear;
 }
 
-.skills .chat-button-label p.chat-skills,
-.projects .chat-button-label p.chat-projects,
-.about .chat-button-label p.chat-about,
-.contact .chat-button-label p.chat-contact,
-.project00 .chat-button-label p.chat-project00,
-.project01 .chat-button-label p.chat-project01,
-.project02 .chat-button-label p.chat-project02,
-.project03 .chat-button-label p.chat-project03,
-.project04 .chat-button-label p.chat-project04,
-.project05 .chat-button-label p.chat-project05,
-.project10 .chat-button-label p.chat-project10,
-.project11 .chat-button-label p.chat-project11,
-.project12 .chat-button-label p.chat-project12,
-.project13 .chat-button-label p.chat-project13,
-.project14 .chat-button-label p.chat-project14,
-.project15 .chat-button-label p.chat-project15 {
+.skills .chat-section-label p.chat-skills,
+.projects .chat-section-label p.chat-projects,
+.about .chat-section-label p.chat-about,
+.contact .chat-section-label p.chat-contact,
+.project00 .chat-section-label p.chat-project00,
+.project01 .chat-section-label p.chat-project01,
+.project02 .chat-section-label p.chat-project02,
+.project03 .chat-section-label p.chat-project03,
+.project04 .chat-section-label p.chat-project04,
+.project05 .chat-section-label p.chat-project05,
+.project10 .chat-section-label p.chat-project10,
+.project11 .chat-section-label p.chat-project11,
+.project12 .chat-section-label p.chat-project12,
+.project13 .chat-section-label p.chat-project13,
+.project14 .chat-section-label p.chat-project14,
+.project15 .chat-section-label p.chat-project15 {
   position: relative;
   opacity: 1;
   border-right: 2px solid rgba(0, 0, 0, 0.75);
@@ -162,6 +162,3 @@
   }
 }
 </style>
-
-<script setup>
-</script>

@@ -116,6 +116,8 @@ onMounted(() => {
   element.querySelectorAll('section[id]').forEach((section) => {
     observer.value.observe(section);
   });
+
+  onElementObserved(observer.value.takeRecords());
 });
 onUnmounted(() => {
   if (observer.value) {

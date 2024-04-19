@@ -12,17 +12,17 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
+  width: 60px;
+  height: 60px;
   position: fixed;
   bottom: 20px;
-  right: 20px;
+  right: 24px;
   text-align: center;
   box-sizing: border-box;
   color: #fefefe;
   background-color: var(--accent-clr-xx);
   border: none;
-  z-index: 116;
+  z-index: 9000000001;
   transition: all .5s linear;
   cursor: pointer;
   opacity: 1;
@@ -47,10 +47,11 @@
 .projects .position-button,
 .about .position-button,
 .contact .position-button {
-  bottom: 80px;
-  transform: rotate(33deg);
+  bottom: 100px;
   opacity: .8;
-  transition: all .5s linear;
+  transform: rotate(33deg);
+  transition: bottom .5s linear, opacity .5s linear, transform .5s linear;
+  z-index: 115;
 }
 
 .project00 .position-button,
@@ -65,19 +66,21 @@
 .project13 .position-button,
 .project14 .position-button,
 .project15 .position-button {
-  bottom: 80px;
+  bottom: 100px;
   opacity: .8;
-  transition: all .5s linear;
   transform: rotate(66deg);
+  transition: bottom .5s linear, opacity .5s linear, transform .5s linear;
+  z-index: 115;
 }
 </style>
 
 <script setup>
 const projectStore = useProjectStore();
 
-const handleClick = (project) => {
+const handleClick = () => {
   const element = document.getElementById('__nuxt');
   if (element.className === 'intro') {
+    element.className = 'projects';
     const projects = document.getElementById('projects');
     window.scrollTo({top: projects.offsetTop - 50, behavior: 'smooth'});
   } else if (element.className !== 'projects' && element.className.includes('project')) {

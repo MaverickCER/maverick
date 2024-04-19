@@ -112,7 +112,6 @@
   width: auto;
   margin: auto;
   height: 100%;
-  z-index: 5;
   top: 0;
   left: 0;
   pointer-events: none;
@@ -210,11 +209,13 @@
   background-color: #fefefe;
   width: 100%;
   max-width: 385px;
+  opacity: .9;
 }
 
 .projects a:hover,
 .projects button:hover {
   box-shadow: 0 0 10px rgba(121, 1, 1, 0.1);
+  opacity: 1;
 }
 
 .projects img {
@@ -271,11 +272,9 @@
   overflow: hidden;
   display: -webkit-box;
   -webkit-line-clamp: 3;
-  /* number of lines to show */
   line-clamp: 3;
   -webkit-box-orient: vertical;
   font-size: 1rem;
-  ;
   line-height: 1.5;
   margin: .5rem 0;
 }

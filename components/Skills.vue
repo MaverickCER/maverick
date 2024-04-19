@@ -1,5 +1,4 @@
 <template>
-
   <section class="skills-section" id="skills">
     <h2>{{ $t("tSkillsSectionTitle") }}</h2>
     <h3>{{ $t("tSkillsSectionSubtitle") }}</h3>

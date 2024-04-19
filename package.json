@@ -14,6 +14,7 @@
     "@nuxt/types": "^2.17.3",
     "@nuxtjs/i18n": "^8.3.0",
     "@pinia/nuxt": "^0.5.1",
+    "@tawk.to/tawk-messenger-vue-3": "^1.0.3",
     "nuxt": "^3.11.2",
     "pinia": "^2.1.7",
     "vue": "^3.4.21",

@@ -62,5 +62,6 @@ export default defineNuxtConfig({
   },
   plugins: [
     "~/plugins/vue-hotjar-next.client.js",
+    "~/plugins/tawk-to.client.js"
   ]
 });
