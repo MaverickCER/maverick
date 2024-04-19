@@ -210,12 +210,15 @@
   width: 100%;
   max-width: 385px;
   opacity: .9;
+  z-index: 5;
+  transition: all .5s linear;
 }
 
 .projects a:hover,
 .projects button:hover {
   box-shadow: 0 0 10px rgba(121, 1, 1, 0.1);
   opacity: 1;
+  transition: all .5s linear;
 }
 
 .projects img {

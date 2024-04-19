@@ -71,7 +71,7 @@
 }
 
 .about-section .content {
-  width: 65%;
+  width: 62%;
   position: relative;
   z-index: 1;
   padding: 0 0 50px;
@@ -85,7 +85,7 @@
 
 .about-section .background {
   display: flex;
-  width: 35%;
+  width: 38%;
   height: auto;
   max-height: 600px;
   aspect-ratio: .775;
