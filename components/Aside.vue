@@ -3,53 +3,54 @@
   <div class="container">
     <section class="aside-section">
       <h2>{{ $t(`tAsideSectionTitle${projectStore.project}`) }}</h2>
-      <div class="video">
+      <div class="video" v-if="$t(`tAsideSectionVideo${projectStore.project}`)">
         <iframe width="560" height="315" :src="`${$t(`tAsideSectionVideo${projectStore.project}`)}`" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen />
       </div>
+      <h3><a :href="`${$t(`tAsideSectionHref${projectStore.project}`)}`" target="_blank" rel="noopener">{{ $t(`tAsideSectionLinkLabel${projectStore.project}`) }}</a></h3>
       <details open>
-        <summary><span role="term" aria-details="right-details">{{ $t(`tAsideSectionRoleLabel${projectStore.project}`) }}</span></summary>
+        <summary><span role="term" aria-details="details">{{ $t(`tAsideSectionRoleLabel${projectStore.project}`) }}</span></summary>
       </details>
-      <div role="definition" id="right-details">
+      <div role="definition" id="details">
         <article>
           {{ $t(`tAsideSectionRoleDescription${projectStore.project}`) }}
         </article>
       </div>
       <details open>
-        <summary><span role="term" aria-details="right-challenge">{{ $t(`tAsideSectionTechnologyLabel${projectStore.project}`) }}</span></summary>
+        <summary><span role="term" aria-details="challenge">{{ $t(`tAsideSectionTechnologyLabel${projectStore.project}`) }}</span></summary>
       </details>
-      <div role="definition" id="right-challenge">
+      <div role="definition" id="challenge">
         <article>
           {{ $t(`tAsideSectionTechnologyDescription${projectStore.project}`) }}
         </article>
       </div>
       <details open>
-        <summary><span role="term" aria-details="right-action">{{ $t(`tAsideSectionIntroductionLabel${projectStore.project}`) }}</span></summary>
+        <summary><span role="term" aria-details="action">{{ $t(`tAsideSectionIntroductionLabel${projectStore.project}`) }}</span></summary>
       </details>
-      <div role="definition" id="right-action">
+      <div role="definition" id="action">
         <article>
           {{ $t(`tAsideSectionIntroductionDescription${projectStore.project}`) }}
         </article>
       </div>
       <details open>
-        <summary><span role="term" aria-details="right-solution">{{ $t(`tAsideSectionProblemLabel${projectStore.project}`) }}</span></summary>
+        <summary><span role="term" aria-details="solution">{{ $t(`tAsideSectionProblemLabel${projectStore.project}`) }}</span></summary>
       </details>
-      <div role="definition" id="right-solution">
+      <div role="definition" id="solution">
         <article>
           {{ $t(`tAsideSectionProblemDescription${projectStore.project}`) }}
         </article>
       </div>
       <details open>
-        <summary><span role="term" aria-details="right-results">{{ $t(`tAsideSectionActionLabel${projectStore.project}`) }}</span></summary>
+        <summary><span role="term" aria-details="results">{{ $t(`tAsideSectionActionLabel${projectStore.project}`) }}</span></summary>
       </details>
-      <div role="definition" id="right-results">
+      <div role="definition" id="results">
         <article>
           {{ $t(`tAsideSectionActionDescription${projectStore.project}`) }}
         </article>
       </div>
       <details open>
-        <summary><span role="term" aria-details="right-results">{{ $t(`tAsideSectionResultsLabel${projectStore.project}`) }}</span></summary>
+        <summary><span role="term" aria-details="results">{{ $t(`tAsideSectionResultsLabel${projectStore.project}`) }}</span></summary>
       </details>
-      <div role="definition" id="right-results">
+      <div role="definition" id="results">
         <article>
           {{ $t(`tAsideSectionResultsDescription${projectStore.project}`) }}
         </article>
@@ -113,6 +114,43 @@ aside .aside-section {
   font-weight: 700;
   font-family: "Montserrat", sans-serif;
   margin: 0 0 30px 0;
+}
+
+.aside-section h3 a {
+  color: #222222;
+  font-size: 16px;
+  font-weight: 400;
+  font-family: "Montserrat", sans-serif;
+  margin: 0 0 30px 0;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: all .5s linear;
+  position: relative;
+  line-height: 1.5;
+}
+
+.aside-section h3 a::after {
+  content: ">";
+  display: inline-block;
+  position: absolute;
+  right: -10px;
+  top: 50%;
+  color: transparent;
+  transform: translateY(-50%);
+  transition: all .5s linear;
+  font-weight: 600;
+  font-family: "Montserrat", sans-serif;
+}
+
+.aside-section h3:hover a {
+  color: #790101;
+  border-bottom: 1px solid #790101;
+  transition: all .5s linear;
+}
+
+.aside-section h3:hover a::after {
+  color: #790101;
+  transition: all .5s linear;
 }
 
 .aside-section .video {
