@@ -11,7 +11,7 @@ export default defineNuxtConfig({
         { name: "description", content: "Lead Software Engineer with 7+ years of experience in Project Management, UX/UI Design, and accessible full stack development. Garnered media attention for efforts to encourage accessible communication within gaming." },
         { name: "og:description", content: "Lead Software Engineer with 7+ years of experience in Project Management, UX/UI Design, and accessible full stack development. Garnered media attention for efforts to encourage accessible communication within gaming." },
         { name: "theme-color", content: "#780102" },
-        { name: "twitter:card", content: "summary" },
+        { name: "twitter:card", content: "summary_large_image" },
         { name: "twitter:image:alt", content: "" },
         { name: "twitter:image", content: "https://i.ibb.co/9hrKrJJ/thumbnail.png" },
         { name: "og:image", content: "https://i.ibb.co/9hrKrJJ/thumbnail.png" },
