@@ -244,7 +244,7 @@
   position: relative;
   overflow: hidden;
   width: 100%;
-  padding-bottom: 52.36%;
+  padding-bottom: 56.25%;
   border-radius: .5rem;
 }
 
