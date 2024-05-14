@@ -18,11 +18,11 @@
     <p class="chat-project14">{{ $t(`tChatButtonProject14`) }}</p>
     <p class="chat-project15">{{ $t(`tChatButtonProject15`) }}</p>
   </div>
-  <div class="chat-section-icon">
+  <button class="chat-section-icon" @click="handleClick">
     <span></span>
     <span></span>
     <span></span>
-  </div>
+  </button>
 </section>
 </template>
 
@@ -162,3 +162,7 @@
   }
 }
 </style>
+
+<script setup>
+const handleClick = () => Tawk_API.toggle();
+</script>

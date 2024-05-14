@@ -22,7 +22,7 @@
   color: #fefefe;
   background-color: var(--accent-clr-xx);
   border: none;
-  z-index: 9000000001;
+  z-index: 115;
   transition: all .5s linear;
   cursor: pointer;
   opacity: 1;
