@@ -1,12 +1,12 @@
 <template>
   <section class="intro-section" id="intro">
-    <h1>{{ $t(`tIntroSectionTitle`) }}</h1>
-    <h2>{{ $t(`tIntroSectionName`) }}</h2>
-    <h3>{{ $t(`tIntroSectionSubtitle`) }}</h3>
+    <article class="intro-article">
+      <h1>{{ $t(`tIntroSectionTitle`) }}</h1>
+      <h2>{{ $t(`tIntroSectionName`) }}</h2>
+      <h3>{{ $t(`tIntroSectionSubtitle`) }}</h3>
+    </article>
     <div class="img-marq" aria-hidden="true">
       <div class="circle-shadow"></div>
-      <div class="box-shadow"></div>
-      <div class="box-shadow shadow-right"></div>
       <div class="slide-img-0">
         <div class="box">
           <NuxtImg src="/img/intro-section-img-00.png" :alt="`${$t(`tIntroSectionAlt00`)}`" placeholder="/blur/intro-section-blur-00.png" />
@@ -44,30 +44,28 @@
   scale: none;
   transform: translate(0px, 0px);
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: calc(100vh - 86px);
-  gap: 30px;
-  padding: 50px 30px;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  min-height: calc(100vh - 51px);
 }
 
 .intro-section h1 {
-  font-size: clamp(12px, 4.3vw, 18px);
+  font-size: clamp(18px, 2.504816955vw, 26px);
   font-weight: 600;
   letter-spacing: 2px;
-  text-align: center;
+  text-align: left;
   margin: 0;
   font-family: "Montserrat", sans-serif;
   color: #222222;
 }
 
 .intro-section h2 {
-  font-size: clamp(28px, 10vw, 83px);
+  font-size: clamp(60px, 8vw, 88px);
   font-weight: 700;
   text-transform: uppercase;
   line-height: 1;
-  text-align: center;
+  text-align: left;
   margin: 0;
   font-family: "Montserrat", sans-serif;
   color: #790101;
@@ -78,25 +76,36 @@
 }
 
 .intro-section h3 {
-  font-size: clamp(16px, 5.7vw, 24px);
+  font-size: clamp(12px, 1.734104046vw, 18px);
   letter-spacing: 2px;
-  text-align: center;
+  text-align: left;
   font-weight: 300;
   margin: 0;
   font-family: "Montserrat", sans-serif;
   color: #444444;
 }
 
+.intro-section .intro-article {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 30px;
+  position: relative;
+  max-width: fit-content;
+  margin-right: auto;
+  background-color: #eeeeee;
+  opacity: 1;
+  background-image:  repeating-radial-gradient( circle at 100% 50%, transparent 0, #eee 40px ), repeating-linear-gradient( #ebebeb, #ebebeb );
+  flex: 1;
+  min-height: inherit;
+  padding: 20px;
+  padding-left: max(calc((100vw - 820px)/2),20px);
+}
+
 .intro-section .circle-shadow {
   z-index: 5;
-  background-image: -webkit-radial-gradient(circle,
-      rgba(254, 254, 254, 0.05),
-      transparent 50%);
-  background-image: -o-radial-gradient(circle,
-      rgba(254, 254, 254, 0.05),
-      transparent 50%);
   background-image: radial-gradient(circle,
-      rgba(254, 254, 254, 0.05),
+      rgba(254, 254, 254, 1),
       transparent 50%);
   position: absolute;
   top: 0%;
@@ -104,74 +113,19 @@
   left: 0%;
   right: 0%;
   pointer-events: none;
-}
-
-.intro-section .box-shadow {
-  z-index: 0;
-  width: 290vw;
-  height: 50vw;
-  -webkit-transform-origin: 0%;
-  -ms-transform-origin: 0%;
-  transform-origin: 0%;
-  -webkit-transform-style: preserve-3d;
-  transform-style: preserve-3d;
-  background-image: -webkit-gradient(linear,
-      right top,
-      left top,
-      color-stop(50%, #fefefe),
-      color-stop(80%, transparent));
-  background-image: -webkit-linear-gradient(right,
-      #fefefe 50%,
-      transparent 80%);
-  background-image: -o-linear-gradient(right, #fefefe 50%, transparent 80%);
-  background-image: linear-gradient(270deg, #fefefe 50%, transparent 80%);
-  -webkit-box-flex: 0;
-  -ms-flex: none;
-  flex: none;
-  margin-top: auto;
-  margin-bottom: auto;
-  position: absolute;
-  top: 0%;
-  bottom: 0%;
-  left: 0%;
-  right: auto;
-  -webkit-transform: rotate3d(0, 1, 0.00009, 80deg);
-  transform: rotate3d(0, 1, 0.00009, 80deg);
-}
-
-.intro-section .shadow-right {
-  -webkit-transform-origin: 100%;
-  -ms-transform-origin: 100%;
-  transform-origin: 100%;
-  -webkit-transform-style: preserve-3d;
-  transform-style: preserve-3d;
-  background-image: -webkit-gradient(linear,
-      left top,
-      right top,
-      color-stop(50%, #fefefe),
-      color-stop(80%, transparent));
-  background-image: -webkit-linear-gradient(left, #fefefe 50%, transparent 80%);
-  background-image: -o-linear-gradient(left, #fefefe 50%, transparent 80%);
-  background-image: linear-gradient(90deg, #fefefe 50%, transparent 80%);
-  top: 0%;
-  bottom: 0%;
-  left: auto;
-  right: 0%;
-  -webkit-transform: rotateX(0) rotateY(-80deg) rotate(0);
-  transform: rotateX(0) rotateY(-80deg) rotate(0);
+  display: none;
 }
 
 .intro-section .img-marq {
   z-index: -1;
-  opacity: 0.7;
-  -webkit-perspective: 1412px;
-  perspective: 1412px;
-  position: absolute;
-  top: 0%;
-  bottom: 0%;
-  left: 0%;
-  right: 0%;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  justify-content: center;
+  margin-left: 0;
+  margin-right: 0;
+  height: calc(100vh - 51px);
 }
 
 .intro-section .img-marq img {
@@ -190,6 +144,8 @@
   display: inline-block;
   border-radius: 0.25rem;
   object-fit: contain;
+  width: auto;
+  height: 100%;
 }
 
 .intro-section .slide-img-0 {
@@ -212,6 +168,9 @@
   right: auto;
   -webkit-transform: rotate3d(0, 1, 0.00009, 80deg);
   transform: rotate3d(0, 1, 0.00009, 80deg);
+  position: relative;
+  transform: unset;
+  height: calc((100vh - 51px)/2 - 45px);
 }
 
 .intro-section .slide-img-0 .box {
@@ -248,6 +207,9 @@
   right: -10%;
   -webkit-transform: rotateX(0) rotateY(-80deg) rotate(0);
   transform: rotateX(0) rotateY(-80deg) rotate(0);
+  position: relative;
+  transform: unset;
+  height: calc((100vh - 51px)/2 - 45px);
 }
 
 .intro-section .slide-img-1 .box {
@@ -321,27 +283,25 @@
   }
 }
 
-@media (max-width: 575px) {
-  .intro-section {
+@media (max-width: 750px) {
+  .intro-article {
     gap: 30px;
     min-height: calc(100vh - 245px);
+    padding: 4vw;
+    min-width: 100%;
+    background-color: transparent !important;
+    background-color: #eee;
+    background-image: repeating-radial-gradient(circle at 50% 50%, #ffffff50 0px, #ffffff00 40px), repeating-linear-gradient(#ffffff00, #ffffff00)!important;
   }
-
-  .intro-section .box-shadow {
-    display: none;
-  }
-
+  
   .intro-section .circle-shadow {
-    z-index: 5;
-    background-image: -webkit-radial-gradient(circle,
-        rgba(254, 254, 254, 0.5),
-        transparent 50%);
-    background-image: -o-radial-gradient(circle,
-        rgba(254, 254, 254, 0.5),
-        transparent 50%);
-    background-image: radial-gradient(circle,
-        rgba(254, 254, 254, 0.9),
-        transparent 100%);
+    display: flex;
+  }
+  
+  .intro-section h1,
+  .intro-section h2,
+  .intro-section h3 {
+    text-align: center;
   }
 
   .intro-section .img-marq {
@@ -351,6 +311,7 @@
     justify-content: center;
     margin-left: 0;
     margin-right: 0;
+    position: absolute;
   }
 
   .intro-section .img-marq img {
@@ -362,7 +323,23 @@
   .intro-section .slide-img-1 {
     position: relative;
     transform: unset;
-    height: calc(50% - 30px);
+    height: calc(50% - 45px);
+  }
+}
+@media (max-width: 527px) {
+  .intro-section {
+    min-height: calc(100vh - 89px);
+  }
+}
+@media (max-width: 374px) {
+  .intro-section h1 {
+    font-size: 18px;
+  }
+  .intro-section h2 {
+    font-size: 32px;
+  }
+  .intro-stection h3 {
+    font-size: 12px;
   }
 }
 </style>
