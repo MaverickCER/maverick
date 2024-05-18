@@ -166,7 +166,7 @@
 <script setup>
 import { onMounted, onBeforeUnmount, ref } from 'vue';
 
-const isListening = ref(!localStorage.getItem('isListening'));
+const isListening = ref(typeof window !== 'undefined' ? !localStorage.getItem('token') : false);
 
 function handleClick() {
   try {
