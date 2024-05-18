@@ -98,8 +98,8 @@
 .intro-section .circle-shadow {
   z-index: 5;
   background-image: radial-gradient(circle,
-      rgba(254, 254, 254, 1) 175px,
-      transparent);
+      rgba(254, 254, 254, 75%) 200px,
+      transparent 240px);
   position: absolute;
   top: 0%;
   bottom: 0%;
