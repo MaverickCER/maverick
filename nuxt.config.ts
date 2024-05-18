@@ -49,7 +49,7 @@ export default defineNuxtConfig({
     "@nuxt/image",
     "@pinia/nuxt",
     "@vite-pwa/nuxt",
-    ['@nuxtjs/google-fonts', { families: { "Montserrat": true, "Robot Mono": true } }]
+    ['@nuxtjs/google-fonts', { families: { "Source Sans 3": true, "Source Code Pro": true } }]
   ],
   devtools: { enabled: true },
   i18n: {

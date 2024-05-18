@@ -105,7 +105,7 @@
   justify-content: flex-start;
   transition: all .5s linear;
   height: fit-content;
-  font-family: "Roboto Mono", monospace;
+  font-family: "Source Code Pro", Courier, monospace;
   font-size: 16px;
   overflow: hidden;
   position: absolute;

@@ -18,7 +18,7 @@
             <div>
               <h4>{{ $t("tProjectsSectionName00") }}</h4>
               <p>{{ $t("tProjectsSectionDescription00") }}</p>
-              <u>{{ $t("tProjectsSectionLinkLabel00") }}</u>
+              <u><span>{{ $t("tProjectsSectionLinkLabel00") }}</span>&gt;</u>
             </div>
           </button>
           <button @click="openAside('01')">
@@ -29,7 +29,7 @@
             <div>
               <h4>{{ $t("tProjectsSectionName01") }}</h4>
               <p>{{ $t("tProjectsSectionDescription01") }}</p>
-              <u>{{ $t("tProjectsSectionLinkLabel01") }}</u>
+              <u><span>{{ $t("tProjectsSectionLinkLabel01") }}</span>&gt;</u>
             </div>
           </button>
           <button @click="openAside('02')">
@@ -40,7 +40,7 @@
             <div>
               <h4>{{ $t("tProjectsSectionName02") }}</h4>
               <p>{{ $t("tProjectsSectionDescription02") }}</p>
-              <u>{{ $t("tProjectsSectionLinkLabel02") }}</u>
+              <u><span>{{ $t("tProjectsSectionLinkLabel02") }}</span>&gt;</u>
             </div>
           </button>
         </div>
@@ -56,7 +56,7 @@
             <div>
               <h4>{{ $t("tProjectsSectionName10") }}</h4>
               <p>{{ $t("tProjectsSectionDescription10") }}</p>
-              <u>{{ $t("tProjectsSectionLinkLabel10") }}</u>
+              <u><span>{{ $t("tProjectsSectionLinkLabel10") }}</span>&gt;</u>
             </div>
           </button>
           <button @click="openAside('11')">
@@ -67,7 +67,7 @@
             <div>
               <h4>{{ $t("tProjectsSectionName11") }}</h4>
               <p>{{ $t("tProjectsSectionDescription11") }}</p>
-              <u>{{ $t("tProjectsSectionLinkLabel11") }}</u>
+              <u><span>{{ $t("tProjectsSectionLinkLabel11") }}</span>&gt;</u>
             </div>
           </button>
           <button @click="openAside('12')">
@@ -78,7 +78,7 @@
             <div>
               <h4>{{ $t("tProjectsSectionName12") }}</h4>
               <p>{{ $t("tProjectsSectionDescription12") }}</p>
-              <u>{{ $t("tProjectsSectionLinkLabel12") }}</u>
+              <u><span>{{ $t("tProjectsSectionLinkLabel12") }}</span>&gt;</u>
             </div>
           </button>
         </div>
@@ -146,14 +146,10 @@
 }
 
 .projects-section h2 {
-  font-size: clamp(28px, 10vw, 32px);
-  font-weight: 700;
-  text-transform: uppercase;
   line-height: 1;
   text-align: center;
   margin: 0;
-  font-family: "Montserrat", sans-serif;
-  color: #790101;
+  color: var(--accent-clr-xx);
   width: 100%;
 }
 
@@ -163,7 +159,6 @@
   text-align: center;
   font-weight: 300;
   margin: 0;
-  font-family: "Montserrat", sans-serif;
   color: #444444;
   width: 100%;
 }
@@ -244,7 +239,7 @@
   position: relative;
   overflow: hidden;
   width: 100%;
-  padding-bottom: 56.25%;
+  padding-bottom: 75%;
   border-radius: .5rem;
 }
 
@@ -259,7 +254,6 @@
 .projects h4 {
   margin: 0;
   text-align: left;
-  font-family: "Montserrat", sans-serif;
   color: #222222;
   overflow: hidden;
   font-weight: 700;
@@ -270,7 +264,6 @@
 .projects p {
   margin: 0;
   text-align: left;
-  font-family: "Montserrat", sans-serif;
   color: #444444;
   overflow: hidden;
   display: -webkit-box;
@@ -290,32 +283,31 @@
   position: relative;
   text-transform: uppercase;
   line-height: 1.5;
-  font-weight: 600;
+  font-weight: 700;
 }
 
-.projects u::after {
-  content: ">";
+.projects u span {
   display: inline-block;
+  margin-right: .25rem;
+  position: relative;
+}
+
+.projects u span::after {
+  content: '';
+  display: block;
+  max-width: 0%;
+  width: 100%;
+  height: 1px;
+  background-color: var(--accent-clr);
+  transition: max-width .5s linear;
   position: absolute;
-  right: -10px;
-  top: 50%;
-  color: transparent;
-  transform: translateY(-50%);
-  transition: all .5s linear;
-  font-weight: 600;
-  font-family: "Montserrat", sans-serif;
+  bottom: 2px;
 }
 
-.projects a:hover u,
-.projects button:hover u {
-  border-bottom: 1px solid #790101;
-  transition: all .5s linear;
-}
-
-.projects a:hover u::after,
-.projects button:hover u::after {
-  color: #790101;
-  transition: all .5s linear;
+.projects a:hover u span::after,
+.projects button:hover u span::after {
+  max-width: 100%;
+  transition: max-width .5s linear;
 }
 
 @media (hover: none) {

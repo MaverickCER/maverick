@@ -3,7 +3,7 @@
     <article class="intro-article">
       <h1>{{ $t(`tIntroSectionTitle`) }}</h1>
       <h2>{{ $t(`tIntroSectionName`) }}</h2>
-      <h3>{{ $t(`tIntroSectionSubtitle`) }}</h3>
+      <h3 v-html="$t(`tIntroSectionSubtitle`)"></h3>
     </article>
     <div class="img-marq" aria-hidden="true">
       <div class="circle-shadow"></div>
@@ -51,37 +51,30 @@
 }
 
 .intro-section h1 {
-  font-size: clamp(18px, 2.504816955vw, 26px);
+  font-size: 24px;
   font-weight: 600;
   letter-spacing: 2px;
   text-align: left;
   margin: 0;
-  font-family: "Montserrat", sans-serif;
   color: #222222;
 }
 
 .intro-section h2 {
-  font-size: clamp(60px, 8vw, 88px);
+  font-size: 77px;
   font-weight: 700;
   text-transform: uppercase;
   line-height: 1;
   text-align: left;
   margin: 0;
-  font-family: "Montserrat", sans-serif;
-  color: #790101;
-}
-
-.intro-section h2 span {
-  margin-right: -2.5%;
+  color: var(--accent-clr-xx);
 }
 
 .intro-section h3 {
-  font-size: clamp(12px, 1.734104046vw, 18px);
+  font-size: 16px;
   letter-spacing: 2px;
   text-align: left;
   font-weight: 300;
   margin: 0;
-  font-family: "Montserrat", sans-serif;
   color: #444444;
 }
 
@@ -283,7 +276,7 @@
   }
 }
 
-@media (max-width: 750px) {
+@media (max-width: 749px) {
   .intro-article {
     gap: 30px;
     min-height: calc(100vh - 245px);
@@ -302,6 +295,9 @@
   .intro-section h2,
   .intro-section h3 {
     text-align: center;
+  }
+  .intro-section h2 {
+    font-size: 73px;
   }
 
   .intro-section .img-marq {
@@ -332,14 +328,8 @@
   }
 }
 @media (max-width: 374px) {
-  .intro-section h1 {
-    font-size: 18px;
-  }
   .intro-section h2 {
-    font-size: 32px;
-  }
-  .intro-stection h3 {
-    font-size: 12px;
+    font-size: 50px;
   }
 }
 </style>

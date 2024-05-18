@@ -70,6 +70,18 @@ body {
   background-color: #fefefe;
   scroll-behavior: smooth;
 }
+* {
+  box-sizing: border-box;
+}
+h2 {
+  font-family: "Source Code Pro", Courier, monospace;
+  font-weight: 700;
+  font-size: 28px;
+  text-transform: uppercase;
+}
+h1, h3, h4, h5, h6, p, a, span, s, b, strong, em, i {
+  font-family: "Source Sans 3", Arial, Helvetica, sans-serif;
+}
 </style>
 
 <script setup>

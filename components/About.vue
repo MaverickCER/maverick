@@ -37,14 +37,10 @@
 }
 
 .about-section h2 {
-  font-size: clamp(28px, 10vw, 32px);
-  font-weight: 700;
-  text-transform: uppercase;
   line-height: 1;
   text-align: left;
   margin: 0;
-  font-family: "Montserrat", sans-serif;
-  color: #790101;
+  color: var(--accent-clr-xx);
   width: 100%;
 }
 
@@ -54,7 +50,6 @@
   text-align: left;
   font-weight: 300;
   margin: 0;
-  font-family: "Montserrat", sans-serif;
   color: #444444;
   width: 100%;
 }
@@ -67,7 +62,7 @@
 }
 
 .about-section .bio ul {
-  margin-bottom: 0;
+  margin: 0;
 }
 
 .about-section .content {

@@ -3,9 +3,10 @@
   <div class="container">
     <section class="aside-section">
       <h2>{{ $t(`tAsideSectionTitle${projectStore.project}`) }}</h2>
-      <div class="video" v-if="$t(`tAsideSectionVideo${projectStore.project}`)">
-        <iframe width="560" height="315" :src="`${$t(`tAsideSectionVideo${projectStore.project}`)}`" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen />
+      <div class="video" v-if="$t(`tAsideSectionVideo${projectStore.project}`) !== `tAsideSectionVideo${projectStore.project}`">
+        <iframe width="560" height="315" :src="`${$t(`tAsideSectionVideo${projectStore.project}`)}?autoplay=1&mute=1`" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen />
       </div>
+      <img :src="`/img/aside-section-img-${projectStore.project}.png`" alt="placeholder image until a video can be created" v-if="$t(`tAsideSectionVideo${projectStore.project}`) === `tAsideSectionVideo${projectStore.project}`" />
       <h3><a :href="`${$t(`tAsideSectionHref${projectStore.project}`)}`" target="_blank" rel="noopener">{{ $t(`tAsideSectionLinkLabel${projectStore.project}`) }}</a></h3>
       <details open>
         <summary><span role="term" aria-details="details">{{ $t(`tAsideSectionRoleLabel${projectStore.project}`) }}</span></summary>
@@ -110,9 +111,6 @@ aside .aside-section {
 
 .aside-section h2 {
   color: var(--accent-clr-xx);
-  font-size: 24px;
-  font-weight: 700;
-  font-family: "Montserrat", sans-serif;
   margin: 0 0 30px 0;
 }
 
@@ -165,6 +163,11 @@ aside .aside-section {
   position: absolute;
   width: 100%;
   height: 100%;  
+}
+
+.aside-section img {
+  width: 100%;
+  max-width: 800px;
 }
 
 .aside-section details {
