@@ -1,13 +1,12 @@
 <template>
-  <button @click="handleClick" class="position-button" ref="positionRef"/>
+  <button @click="handleClick" class="position-button" ref="positionRef" title="back" />
 </template>
 
 <style>
 .position-button {
   pointer-events: all;
-  transform: rotate(90deg);
+  transform: rotate(180deg);
   font-family: "Montserrat", sans-serif;
-  font-size: 24px;
   border-radius: 100%;
   display: flex;
   align-items: center;
@@ -28,32 +27,10 @@
   opacity: 1;
 }
 
-.position-button::after {
-  --x: .8em;
-  --border-left: calc(0.866 * var(--x));
-  --border-bottom: calc(var(--x) / 2);
-  --transform: calc(0.2887 * var(--border-left) * 0.5);
-  border-top: var(--border-bottom) solid transparent;
-  border-right: 0;
-  border-bottom: var(--border-bottom) solid transparent;
-  border-left: var(--border-left) solid white;
-  transform: translateX(var(--transform));
-  content: "";
-  height: 0;
-  width: 0;
-}
-
 .skills .position-button,
 .projects .position-button,
 .about .position-button,
-.contact .position-button {
-  bottom: 100px;
-  opacity: .8;
-  transform: rotate(33deg);
-  transition: bottom .5s linear, opacity .5s linear, transform .5s linear;
-  z-index: 115;
-}
-
+.contact .position-button,
 .project00 .position-button,
 .project01 .position-button,
 .project02 .position-button,
@@ -68,9 +45,70 @@
 .project15 .position-button {
   bottom: 100px;
   opacity: .8;
-  transform: rotate(66deg);
+  transform: rotate(0deg);
   transition: bottom .5s linear, opacity .5s linear, transform .5s linear;
   z-index: 115;
+}
+
+.position-button::before,
+.position-button::after {
+  content: '';
+  display: block;
+  background-color: white;
+  border-radius: 5px;
+  position: absolute;
+  transition: width 0.5s, height 0.5s, top 0.5s, left 0.5s, transform 0.5s;
+  width: 5px;
+  height: 20px;
+  top: 18px;
+}
+
+.position-button::before {
+  left: 22px;
+  transform: rotate(225deg);
+}
+
+.position-button::after {
+  left: 33px;
+  transform: rotate(-225deg);
+}
+
+.project00 .position-button::before,
+.project01 .position-button::before,
+.project02 .position-button::before,
+.project03 .position-button::before,
+.project04 .position-button::before,
+.project05 .position-button::before,
+.project10 .position-button::before,
+.project11 .position-button::before,
+.project12 .position-button::before,
+.project13 .position-button::before,
+.project14 .position-button::before,
+.project15 .position-button::before {
+  width: 5px;
+  height: 36px;
+  top: 12px;
+  left: 28px;
+  transform: rotate(45deg);
+}
+
+.project00 .position-button::after,
+.project01 .position-button::after,
+.project02 .position-button::after,
+.project03 .position-button::after,
+.project04 .position-button::after,
+.project05 .position-button::after,
+.project10 .position-button::after,
+.project11 .position-button::after,
+.project12 .position-button::after,
+.project13 .position-button::after,
+.project14 .position-button::after,
+.project15 .position-button::after {
+  width: 5px;
+  height: 36px;
+  top: 12px;
+  left: 28px;
+  transform: rotate(-45deg);
 }
 </style>
 
