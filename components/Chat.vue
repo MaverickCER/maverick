@@ -166,21 +166,21 @@
 <script setup>
 import { onMounted, onBeforeUnmount, ref } from 'vue';
 
-const isChatOpen = ref(false);
-const isListening = ref(true);
+const isListening = ref(!localStorage.getItem('isListening'));
 
 function handleClick() {
   try {
+    if (isListening.value) {
+      isListening.value = false;
+      localStorage.setItem('isListening', 'false');
+    }
     Tawk_API.toggle();
-    isChatOpen.value = !isChatOpen.value;
-    isListening.value = false;
   } catch (error) {
     setTimeout(() => Tawk_API.toggle(), 500);
   }
 }
 
 function handleListener(event) {
-  if (isChatOpen.value) return console.error(`Chat.handleListener - chat is open`);
   if (!isListening.value) return console.error(`Chat.handleListener - is not listening`);
 
   handleClick();
