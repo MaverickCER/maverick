@@ -259,6 +259,7 @@
   font-weight: 700;
   font-size: 20px;
   line-height: 1.3;
+  text-transform: capitalize;
 }
 
 .projects p {
