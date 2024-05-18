@@ -98,8 +98,8 @@
 .intro-section .circle-shadow {
   z-index: 5;
   background-image: radial-gradient(circle,
-      rgba(254, 254, 254, 1),
-      transparent 50%);
+      rgba(254, 254, 254, 1) 175px,
+      transparent);
   position: absolute;
   top: 0%;
   bottom: 0%;
@@ -308,6 +308,7 @@
     margin-left: 0;
     margin-right: 0;
     position: absolute;
+    width: 100%;
   }
 
   .intro-section .img-marq img {
