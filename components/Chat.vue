@@ -164,24 +164,21 @@
 </style>
 
 <script setup>
-import { onMounted, onBeforeUnmount, ref } from 'vue';
-
-const isListening = ref(typeof window !== 'undefined' ? !localStorage.getItem('token') : false);
+import { onMounted, onBeforeUnmount } from 'vue';
 
 function handleClick() {
   try {
-    if (isListening.value) {
-      isListening.value = false;
+    Tawk_API.toggle();
+    if (!localStorage.getItem('isListening')) {
       localStorage.setItem('isListening', 'false');
     }
-    Tawk_API.toggle();
   } catch (error) {
     setTimeout(() => Tawk_API.toggle(), 500);
   }
 }
 
 function handleListener(event) {
-  if (!isListening.value) return console.error(`Chat.handleListener - is not listening`);
+  if (localStorage.getItem('isListening')) return console.error(`Chat.handleListener - is not listening`);
 
   handleClick();
 
