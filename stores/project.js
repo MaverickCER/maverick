@@ -11,7 +11,7 @@ export const useProjectStore = defineStore('projectStore', {
       document.body.style.overflowY = "hidden";
       window.history.pushState(null, null, document.URL);
     },
-    close() {
+    close(goBack) {
       const element = document.getElementById('__nuxt');
       element.className = 'projects';
       const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
@@ -23,7 +23,9 @@ export const useProjectStore = defineStore('projectStore', {
         this.project = '';
         const element = document.querySelector('aside');
         element.scrollTo({ top: 0, left: 0 });
-        window.history.back();
+        if (goBack) {
+          window.history.back();
+        }
       }, 500);
     }
   }

@@ -124,7 +124,7 @@ const handleClick = () => {
     const projects = document.getElementById('projects');
     window.scrollTo({top: projects.offsetTop - 50, behavior: 'smooth'});
   } else if (element.className !== 'projects' && element.className.includes('project')) {
-    projectStore.close();
+    projectStore.close(true);
   } else {
     window.scrollTo({top: 0, behavior: 'smooth'});
   }
@@ -132,7 +132,7 @@ const handleClick = () => {
 
 const handleBack = () => {
   if (projectStore.$state.project) {
-    projectStore.close();
+    projectStore.close(false);
   }
 }
 
