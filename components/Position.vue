@@ -113,6 +113,8 @@
 </style>
 
 <script setup>
+import { onMounted, onUnmounted } from 'vue';
+
 const projectStore = useProjectStore();
 
 const handleClick = () => {
@@ -127,4 +129,18 @@ const handleClick = () => {
     window.scrollTo({top: 0, behavior: 'smooth'});
   }
 }
+
+const handleBack = () => {
+  if (projectStore.$state.project) {
+    projectStore.close();
+  }
+}
+
+onMounted(() => {
+  window.addEventListener('popstate', handleBack);
+});
+
+onUnmounted(() => {
+  window.removeEventListener('popstate', handleBack);
+});
 </script>

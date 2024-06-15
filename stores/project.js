@@ -9,9 +9,9 @@ export const useProjectStore = defineStore('projectStore', {
       element.className = 'project' + project;
       element.style.setProperty('--progress-width', `0%`);
       document.body.style.overflowY = "hidden";
+      window.history.pushState(null, null, document.URL);
     },
     close() {
-      this.project = '';
       const element = document.getElementById('__nuxt');
       element.className = 'projects';
       const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
@@ -20,8 +20,10 @@ export const useProjectStore = defineStore('projectStore', {
       element.style.setProperty('--progress-width', `${scrolled}%`);
       document.body.style.overflowY = "auto";
       setTimeout(() => {
+        this.project = '';
         const element = document.querySelector('aside');
         element.scrollTo({ top: 0, left: 0 });
+        window.history.back();
       }, 500);
     }
   }
